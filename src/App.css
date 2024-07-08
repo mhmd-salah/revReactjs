@@ -1,0 +1,49 @@
+
+form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 20px;
+  background-color: #112;
+  height: 300px;
+  /* min-width: 40%; */
+  margin-inline: auto;
+  display:grid;
+  place-content: center;
+  border-radius: 20px;
+  div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+    label{
+      font-size: 20px;
+    }
+    input{
+      padding: 4px 10px;
+      outline: none;
+      border: none;
+      width: 100%;
+      font-size: 19px;
+      border-radius: 3px;
+    }
+  }
+  button{
+    font-size: 20px;
+    margin-top: 10px;
+    background-color: white;
+    color: #112;
+  }
+}
+
+.userDetails{
+  width: 90%;
+  margin-inline:auto;
+  background-color: #112;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  h2:first-child{
+    text-transform: capitalize;
+  }
+}

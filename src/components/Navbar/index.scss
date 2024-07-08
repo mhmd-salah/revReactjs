@@ -1,0 +1,17 @@
+.navList{
+  padding: 20px;
+  background-color: darkcyan;
+}
+.navList .container{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+  border: 20px;
+  width: 100%;
+  li{
+    font-size: 19px;
+    text-transform: capitalize;
+  }
+}
