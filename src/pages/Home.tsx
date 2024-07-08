@@ -7,7 +7,6 @@ interface Istate {
 
 class Home extends Component<Iprops, Istate> {
 
-
   render() {
     console.log('from render')
     return (

@@ -1,21 +1,12 @@
-import { useState } from "react";
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import Hooks from "./pages/Hooks";
+import router from "./router/router";
 
 function App() {
-  const [page,setPage]=useState<"home"|"products"|"about"|"hook">("home")
   return (
-    <div>
-      <Navbar home="Home" setPage={setPage}/>
-      {page === "home" && <Home />}
-      {page === "products" && <Products />}
-      {page === "about" && <About/>}
-      {page === "hook" && <Hooks/>}
-    </div>
+    <>
+    <RouterProvider router={router} />
+    </>
   );
 }
 export default App;
