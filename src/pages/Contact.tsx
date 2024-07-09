@@ -1,8 +1,8 @@
 
-export default function About() {
+export default function Contact() {
   return (
     <h1 className="text-3xl bg-sky-400 text-center p-4 absolute top-[30%] w-full text-white ">
-      About Page
+      Contact page
     </h1>
   );
 }
