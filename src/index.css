@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+a{
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+a:hover{
+  color: skyblue;
+}
+.active{
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
