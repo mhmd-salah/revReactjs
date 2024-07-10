@@ -13,6 +13,7 @@ import LearnLayout from "../pages/learn/Layout";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
+    {/* Root layout */}
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<About />} />
