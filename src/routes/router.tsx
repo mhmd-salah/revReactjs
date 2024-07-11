@@ -4,8 +4,9 @@ import {
   Route,
 } from "react-router-dom";
 import RootLayout from "../RootLayout";
-import LearnLayout from "../learn/LearnLayout";
+import LearnLayout from "../Pages/learn/LearnLayout";
 import QuickStart from "../Pages/QuickStart";
+import LangLayout from "../Langlayout/LangLayout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,12 +20,15 @@ const router = createBrowserRouter(
       </Route>
       {/* learn layout */}
       <Route path="/learn" element={<LearnLayout />}>
-        <Route path="/learn" element={<QuickStart/>} />
+        <Route index element={<QuickStart />} />
         <Route
           path="thinking-in-react"
           element={<h1>thinking in react page</h1>}
         />
         <Route path="instlations" element={<h1>instlation</h1>} />
+      </Route>
+      <Route path="/lang" element={<LangLayout />}>
+        <Route path="en" element={<h1>english</h1>} />
       </Route>
     </>
   )

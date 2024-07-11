@@ -8,13 +8,11 @@ a{
   font-size: 20px;
   font-weight: 400;
   text-transform: capitalize;
+  padding: 5px 10px;
 }
-a:hover{
-  background-color: rgba(186, 186, 186, 0.429);
-}
+
 .active{
   background-color: black;
   color: white;
   border-radius: 4px;
-  padding: 5px 10px;
 }

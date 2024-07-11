@@ -4,7 +4,7 @@ export default function LearnAside() {
   return (
     <aside className="">
       <ul className="navList w-[300px] h-full">
-        <div className="container flex flex-col *:p-3 *:my-3 *:rounded-md">
+        <div className="container flex flex-col *:p-3 *:my-3 *:rounded-md ">
           <NavLink to="/learn" end>
             Quic Start
           </NavLink>

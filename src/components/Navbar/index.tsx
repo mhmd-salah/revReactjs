@@ -13,6 +13,7 @@ export default function Navbar({ home ,}: IProps) {
         <NavLink to="/about">About</NavLink>
         <NavLink to="/hook">Hook</NavLink>
         <NavLink to="/learn">learn</NavLink>
+        <NavLink to={"/lang"}>lang</NavLink>
       </div>
     </ul>
   );
