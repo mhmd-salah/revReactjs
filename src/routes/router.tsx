@@ -18,6 +18,7 @@ const router = createBrowserRouter(
         <Route path="about" element={<h1>About page</h1>} />
         <Route path="hook" element={<h1>Hooks page</h1>} />
       </Route>
+      
       {/* learn layout */}
       <Route path="/learn" element={<LearnLayout />}>
         <Route index element={<QuickStart />} />
