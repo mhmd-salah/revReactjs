@@ -1,0 +1,5 @@
+.outletContainer {
+  min-height: calc(100vh - 88px);
+  display: grid;
+  place-content: center;
+}

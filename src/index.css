@@ -5,6 +5,7 @@ body{
   background-color: #222;
   color: white;
 }
+
 a{
   font-size: 20px;
   font-weight: 400;
@@ -16,4 +17,8 @@ a{
   background-color: black;
   color: white;
   border-radius: 4px;
+}
+
+.outlet-container{
+  background-color: red;
 }
