@@ -8,10 +8,13 @@ import Home from "../pages";
 import Contribute from "../pages/Contribute";
 import ProtuctedRoute from "../components/Auth/ProtuctedRoute";
 import Login from "../pages/Login";
+import ErrorHandler from "../components/Errors/ErrorHandler";
 
-const isLoggedIn = false;
+const isLoggedIn = true;
 
-const userData:{email:string}|null = isLoggedIn?{email:"mohamed.ozzx@gmail.com"}:null;
+const userData: { email: string } | null = isLoggedIn
+  ? { email: "mohamed.ozzx@gmail.com" }
+  : null;
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +25,11 @@ const router = createBrowserRouter(
         <Route
           path="login"
           element={
-            <ProtuctedRoute isAllowed={!isLoggedIn} redirectPath="/contribute" data={userData}>
+            <ProtuctedRoute
+              isAllowed={!isLoggedIn}
+              redirectPath="/contribute"
+              data={userData}
+            >
               <Login />
             </ProtuctedRoute>
           }
@@ -34,6 +41,7 @@ const router = createBrowserRouter(
               <Contribute />
             </ProtuctedRoute>
           }
+          errorElement={<ErrorHandler/>}
         />
         <Route
           path="contact"
