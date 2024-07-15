@@ -19,7 +19,7 @@ const userData: { email: string } | null = isLoggedIn
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<RootLayout />}>
+      <Route path="/" element={<RootLayout />} errorElement={<ErrorHandler />}>
         <Route index element={Home("hello")} />
         <Route path="about" element={<h1>About</h1>} />
         <Route
@@ -41,13 +41,13 @@ const router = createBrowserRouter(
               <Contribute />
             </ProtuctedRoute>
           }
-          errorElement={<ErrorHandler/>}
         />
         <Route
           path="contact"
           element={<h1 className="text-6xl">Contac Us</h1>}
         />
       </Route>
+      <Route path="*" element={<h1 className="text-red-500 text-3xl">Not Founed</h1>}/>
     </>
   )
 );

@@ -1,6 +1,11 @@
-
-export default function ErrorHandler() {
+interface Iprops{
+  statusCode?:number;
+  title?:string
+}
+export default function ErrorHandler({statusCode=500,title="server error"}:Iprops) {
   return (
-    <div>ErrorHandler</div>
+    <div>
+      <h2>{statusCode} {title}</h2>
+    </div>
   )
 }
