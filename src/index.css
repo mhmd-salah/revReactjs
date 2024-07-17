@@ -25,3 +25,10 @@ a{
   background-color: red;
 }
 
+div.special{
+  background: red;
+}
+.special div{
+  background-color: red;
+}
+
