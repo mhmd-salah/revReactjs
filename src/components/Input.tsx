@@ -5,7 +5,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement>{}
 function Input({...rest}:Props) {
   console.log("<Input/>");
   return (
-    <input {...rest} className="py-1 px-2 text-black border-sky-400 border-l outline-none"/>
+    <input {...rest} className="py-2 px-3 border-sky-400 border-l outline-none bg-transparent border rounded-sm text-white"/>
   )
 }
 
