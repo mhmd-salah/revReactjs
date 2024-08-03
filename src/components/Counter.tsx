@@ -1,20 +1,16 @@
-/* eslint-disable react-refresh/only-export-components */
-
-// import { memo } from "react";
-import { memo, useCallback, useState } from "react";
+import { useSelector } from "react-redux";
 import Button from "./Button";
+import { RootState, useAppDispatch } from "../App/Store"; // Adjust this import path as needed
+import { ReactNode } from "react";
+import { increment } from "../App/features/counter/CounterSlice";
 
-function Counter() {
-  console.log("<Counter/>");
-  const [counter, setCounter] = useState(0);
-  const handleClick = useCallback(() => setCounter((prev) => prev + 1),[]);
-  return (
-    <div>
-      <h3>Counter : {counter}</h3>
-      <div>
-        <Button onClick={handleClick}>Increment Counter</Button>
-      </div>
-    </div>
-  );
-}
-export default memo(Counter);
+const Counter = () => {
+  const {value,text} = useSelector(({counter}: RootState) =>counter)
+  const disPatch = useAppDispatch()
+  return <div>
+  <h3>Counter : {value}</h3>
+  <Button onClick={()=>disPatch(increment(1))}>{text as ReactNode}</Button>
+</div>;
+};
+
+export default Counter;
