@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import { useDispatch } from "react-redux";
-import CounterSlice from "./features/counter/CounterSlice";
 import { useDispatch } from "react-redux";
+import   shoppingCartSlice  from "./features/ShopingCart/ShowpingCard";
+import CounterSlice from "./features/counter/CounterSlice";
 
 // ...
-
 const store = configureStore({
   reducer: {
-    counter: CounterSlice
+    counter: CounterSlice,
+    shoppingCart: shoppingCartSlice,
   },
 });
 
