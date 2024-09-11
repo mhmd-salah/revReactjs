@@ -1,14 +1,11 @@
-import Counter from "./components/Counter";
-
-
+import Navbar from "./components/Navbar";
 
 function App() {
-  console.log("<App/>");
-
-    return (
-      <main className="flex flex-col items-center justify-center h-screen">
-        <Counter/>
-      </main>
-    );
+  return (
+    <main className="text-white">
+        <Navbar />
+        <Navbar.Sub text="Sub Navbar"/>
+    </main>
+  );
 }
 export default App;
