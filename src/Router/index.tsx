@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -16,6 +17,9 @@ const router = createRoutesFromElements(
 );
 const routes = createBrowserRouter(router);
 function AppRouter() {
+  useEffect(()=>{
+    console.log("hello from app Router Component")
+  },[])
   return <RouterProvider router={routes} />;
 }
 
