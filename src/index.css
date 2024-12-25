@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+  background-color: #222;
+}
+
+/* 
 body{
   background-color: #222;
   color: white;
@@ -32,3 +38,4 @@ div.special{
   background-color: red;
 }
 
+ */

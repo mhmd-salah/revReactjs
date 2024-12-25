@@ -1,12 +1,11 @@
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import App from './App';
-import { Provider } from 'react-redux';
-import store from './App/Store';
+import { createRoot } from "react-dom/client";
+import AppRouter from "./Router/AppRouter";
 
+const container = document.getElementById("root");
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <Provider store={store}>
-    <App/>
-  </Provider>,
-)
+if (container) {
+  const root = createRoot(container);
+  root.render(<AppRouter/>);
+} else {
+  throw new Error("root element not failed");
+}
