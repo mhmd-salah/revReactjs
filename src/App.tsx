@@ -1,17 +1,14 @@
-import Navbar from "./components/Navbar";
-import UsersContext from "./context/UsersContext";
-import AppRouter from "./Router";
+import { QueryClient, QueryClientProvider } from "react-query";
+import Products from "./components/products/Products";
 
-function App() {
+const queryClient = new QueryClient();
 
+const App = () => {
   return (
-      <main className="text-white">
-        <UsersContext>
-          <Navbar />
-          <Navbar.Sub text="Sub Navbar" />
-          <AppRouter />
-        </UsersContext>
-      </main>
+    <QueryClientProvider client={queryClient}>
+      <Products />
+    </QueryClientProvider>
   );
-}
+};
+
 export default App;

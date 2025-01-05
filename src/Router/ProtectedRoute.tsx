@@ -1,10 +1,13 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useAppSelector } from "../App/hooks";
+// import { useAppSelector } from "../App/hooks";
+import AuthTokenManager from "../global/authTokenManager";
 
 const ProtectedRoute = () => {
-  const isAuth = useAppSelector((state) => state.auth.isAuthenticate);
+  const authManager = AuthTokenManager.getInstance();
+  // const isAuth = useAppSelector((state) => state.auth.isAuthenticate);
+  const token = authManager.getToken();
 
-  return isAuth ? <Outlet /> : <Navigate to={"/login"} />;
+  return token ? <Outlet /> : <Navigate to={"/login"} />;
 };
 
 export default ProtectedRoute;

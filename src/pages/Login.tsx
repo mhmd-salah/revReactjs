@@ -1,17 +1,19 @@
 import { useState } from "react";
-import axiosInstance from "../api/axiosConfig";
-import { useAppDispatch } from "../App/hooks";
-import { login } from "../App/features/authSlice";
+import axiosInstance from "../config/axiosConfig";
 import { useNavigate } from "react-router-dom";
+import AuthTokenManager from "../global/authTokenManager";
+// import { useAppDispatch } from "../App/hooks";
+// import { login } from "../App/features/authSlice";
+
 interface FormValues {
   email: string;
   password: string;
 }
 
 const Login = () => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
+  const authManager = AuthTokenManager.getInstance();
   // state
   const [formValues, setFormValues] = useState<FormValues>({
     email: "",
@@ -39,12 +41,13 @@ const Login = () => {
     setLoading(true);
     try {
       const response = await axiosInstance.post("/login", formValues);
-      dispatch(login(response.data.token));
+      // dispatch(login(response.data.token));
+      authManager.setToken(response.data.token);
       navigate("/");
     } catch (error) {
       console.log(error);
-      if(error instanceof Error) {
-        setError(error.message);
+      if (error instanceof Error) {
+        setError(error.response.data || error.message);
       }
     } finally {
       setLoading(false);
@@ -52,25 +55,27 @@ const Login = () => {
   };
 
   return (
-    <>
-      <h1>login</h1>
-      <form onSubmit={onSubmitForm}>
+    <div className="h-screen flex flex-col justify-center items-center ]">
+      <h1 className="text-4xl mb-6 capitalize ">login</h1>
+      <form onSubmit={onSubmitForm} className="*:block space-y-5">
         <input
           type="email"
           placeholder="email"
           onChange={handleChange("email")}
+          className="px-2 py-1 text-lg text-black rounded-md outline-none w-full md:w-[300px]"
         />
         <input
           type="password"
           placeholder="password"
           onChange={handleChange("password")}
+          className="px-2 py-1 text-lg text-black rounded-md outline-none w-full md:w-[300px]"
         />
-        <button type="submit">
+        <button type="submit" className="bg-teal-600 py-1 px-3">
           {loading ? "Loading..." : "Login"}
         </button>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
-    </>
+    </div>
   );
 };
 export default Login;

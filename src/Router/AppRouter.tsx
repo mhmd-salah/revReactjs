@@ -11,10 +11,11 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Error from "../pages/Error";
 import ProtectedRoute from "./ProtectedRoute";
-
+import RootLayout from "../layout/RootLayout";
+import "../index.css";
 const routes = createBrowserRouter(
   createRoutesFromElements(
-    <Route errorElement={<Error />}>
+    <Route errorElement={<Error />} element={<RootLayout />}>
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route element={<ProtectedRoute />}>

@@ -1,4 +1,7 @@
 
+
+// singleton pattern example
+
 class GlobalStore{
   private static instance: GlobalStore;
   private data: Record<string, unknown>;
@@ -13,7 +16,7 @@ class GlobalStore{
     }
     return GlobalStore.instance;
   }
-  
+
   public setData(key:string, value:unknown){
     this.data[key] = value;
   }
