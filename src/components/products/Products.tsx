@@ -5,12 +5,10 @@ import { useMutation } from "react-query";
 axios.defaults.baseURL = "http://localhost:3000";
 
 const addProduct = async (newProduct: { name: string; price: number }) => {
-  const response = await axios.post(
-    "http://localhost:3000/products",
-    newProduct
-  );
+  const response = await axios.post("/products", newProduct);
   return response.data;
 };
+
 const Products = () => {
   const mutation = useMutation(addProduct, {
     onSuccess: () => {

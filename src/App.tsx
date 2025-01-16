@@ -1,14 +1,11 @@
-import { QueryClient, QueryClientProvider } from "react-query";
-import Products from "./components/products/Products";
-
-const queryClient = new QueryClient();
+import { CreditStrategy } from "./payment strategies/creditStrategy";
+import { PaymentContext } from "./payment strategies/paymentContext";
 
 const App = () => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Products />
-    </QueryClientProvider>
-  );
+  const creditStrategy = new CreditStrategy();
+  const paymentContext = new PaymentContext(creditStrategy);
+  paymentContext.pay(12);
+  return <div>hi</div>;
 };
 
 export default App;
