@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 // import AppRouter from "./Router/AppRouter";
 // import AppRouter from "./Router";
+import "./index.css"
 import App from "./App";
 
 const container = document.getElementById("root");
