@@ -1,4 +1,4 @@
-import TextEditor from "./components/TextEditor/TextEditor";
+import CalcComponent from "./calculatorWithCommandPattern/CalcComponent";
 import { CreditStrategy } from "./payment strategies/creditStrategy";
 import { PaymentContext } from "./payment strategies/paymentContext";
 
@@ -8,7 +8,8 @@ const App = () => {
   paymentContext.pay(12);
   return (
     <div>
-      <TextEditor />
+      {/* <TextEditor /> */}
+      <CalcComponent />
     </div>
   );
 };

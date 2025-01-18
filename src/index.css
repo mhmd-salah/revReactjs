@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   background-color: #222;
-  color: white;
   height: 100vh;
-
+  display: grid;
+  place-items: center;
 }
 
 /* 

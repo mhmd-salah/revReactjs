@@ -1,10 +1,8 @@
-
 function outerFunction() {
-  let outerVar = "i am outside";
-  function innerFunction(){
-    let innerVar = "i am inside";
-    console.log(outerVar)
+  let outerVar = 'i am outside';
+  function innerFunction() {
+    console.log(outerVar);
   }
-  innerFunction()
+  innerFunction();
 }
-outerFunction()
+outerFunction();
